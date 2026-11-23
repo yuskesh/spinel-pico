@@ -1,0 +1,6 @@
+.program phases
+.wrap_target
+    set pins, 3 [1]
+    set pins, 2 [2]
+    set pins, 0 [4]
+.wrap

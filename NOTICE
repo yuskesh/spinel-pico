@@ -1,0 +1,18 @@
+spinel-pico
+Copyright (c) 2026 Yusuke Shinozaki
+
+spinel-pico is licensed under Apache-2.0 WITH LLVM-exception. See LICENSE.
+This covers every file in this repository except those listed in THIRD_PARTY.md.
+
+The RP2040's second-stage boot under port/chip/rp2040/boot2 is derived from
+pico-sdk (https://github.com/raspberrypi/pico-sdk): BSD-3-Clause, Copyright
+(c) 2019-2021 Raspberry Pi (Trading) Ltd. It carries its licence text beside
+it. An image built for the RP2040 contains it.
+
+The register addresses, offsets and field positions in lib/pico are numbers
+taken from the RP2040 and RP2350 datasheets and compared with pico-sdk's
+register headers (https://github.com/raspberrypi/pico-sdk, BSD-3-Clause,
+Copyright (c) Raspberry Pi (Trading) Ltd.) by tools/regs_check.sh, which reads
+the headers from a pico-sdk checkout named by PICO_SDK.
+
+This is a summary and not legal advice.

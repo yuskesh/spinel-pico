@@ -1,0 +1,7 @@
+.program pulse
+.wrap_target
+    wait 1 pin 0
+    set pins, 1 [9]
+    set pins, 0
+    wait 0 pin 0
+.wrap

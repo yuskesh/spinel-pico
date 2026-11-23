@@ -1,0 +1,7 @@
+.program two_pins
+.side_set 1
+.wrap_target
+    set pins, 1     side 1 [2]
+    nop             side 0 [1]
+    set pins, 0     side 0 [4]
+.wrap

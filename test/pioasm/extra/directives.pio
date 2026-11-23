@@ -1,0 +1,26 @@
+.program d_all
+.side_set 1 opt
+.fifo tx
+.clock_div 2.5
+.mov_status txfifo < 3
+.set 2
+.out 5 right 16
+.in 32 left auto 24
+    nop
+
+.program d_defaults
+.in 32
+.out 1 left
+.mov_status rxfifo < 2
+.clock_div 1
+    nop
+
+.program d_auto
+.in 32 right auto
+.out 32 left auto
+.clock_div 3.125
+    nop
+
+.program d_frac
+.clock_div 1.3
+    nop

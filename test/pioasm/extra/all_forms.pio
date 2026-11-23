@@ -1,0 +1,32 @@
+.program all_forms
+.wrap_target
+top:
+    jmp top
+    jmp !x top
+    jmp x-- top [31]
+    jmp !y top
+    jmp y-- top
+    jmp x!=y top
+    jmp pin top
+    jmp !osre top
+    wait 0 gpio 31
+    wait 1 pin 7
+    wait 1 irq 3
+    wait 0 irq 7 rel
+    in pins, 32
+    in x, 1
+    in y, 5
+    in null, 31
+    in isr, 8
+    in osr, 16
+    out pins, 32
+    out pindirs, 3
+    out pc, 5
+    out exec, 16
+    out isr, 4
+    out null, 2
+    push iffull noblock
+    push
+    pull ifempty noblock
+    pull ifempty
+.wrap

@@ -1,0 +1,27 @@
+# Raspberry Pi RP2040, core 0 (a Cortex-M0+).
+format: spinel-chip
+version: 1
+archs: [armv6-m]
+cpu: m0plus
+values:
+  flash: { origin: 0x10000000, boot2_bytes: 256 }  # XIP; the boot ROM's second-stage slot
+  ram: { origin: 0x20000000, bytes: 270336 }       # SRAM0-5, 264 KB
+# the second stage with its checksum, made before the link (the head of
+# boot2/object.rb says how the driver calls it)
+objects: boot2/object.rb
+# The flash an image may be loaded in is not stated again: the two keys name
+# the values that say it, the family's and the board's. UF2 is the format of
+# the boot ROM's USB drive; the family id is the RP2040's.
+image:
+  flash_origin: chip.flash.origin
+  flash_bytes: board.flash.size_bytes
+  uf2: { family_id: 0xe48bff56 }
+board:
+  clock.crystal_hz: { type: int, min: 1000000, max: 15000000 }
+  flash.size_bytes: { type: int, min: 4096 }
+  flash.boot2: { type: name, one_of: [generic_03h] }
+  flash.clock_divider: { type: int, min: 2, max: 254 }
+  console.uart: { type: int, one_of: [0] }
+  console.tx: { type: int, min: 0, max: 29 }
+  console.rx: { type: int, min: 0, max: 29 }
+  console.baud: { type: int, min: 1 }

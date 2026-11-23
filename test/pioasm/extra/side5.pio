@@ -1,0 +1,5 @@
+.program side5
+.side_set 5
+    nop side 31
+    set x, 1 side 0
+    jmp 0 side 17

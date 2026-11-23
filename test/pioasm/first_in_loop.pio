@@ -1,0 +1,7 @@
+.program first_in_loop
+    set pins, 0
+.wrap_target
+    nop [1]
+    set pins, 1 [1]
+    set pins, 0
+.wrap

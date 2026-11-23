@@ -1,0 +1,13 @@
+.program groups
+.wrap_target
+    set x, 1
+outer:
+    set y, 2
+inner:
+    set pins, 1 [1]
+    set pins, 0 [1]
+    jmp y-- inner
+    nop [7]
+    jmp x-- outer
+    nop [18]
+.wrap

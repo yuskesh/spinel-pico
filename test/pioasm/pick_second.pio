@@ -1,0 +1,16 @@
+.program pick_second
+.wrap_target
+top:
+    set pins, 1
+    jmp pin longer
+    jmp merge
+longer:
+    nop [2]
+merge:
+    set pins, 0
+    mov osr, pins
+    out null, 1
+    out y, 1
+    jmp !y top [1]
+    nop [5]
+.wrap

@@ -1,0 +1,8 @@
+.program tick
+.wrap_target
+    set pins, 1 [23]
+    set pins, 0
+    set y, 6
+hold:
+    jmp y-- hold [13]
+.wrap

@@ -1,0 +1,15 @@
+; Hand-written version of the instructions examples/ws2812.rb (time layer) should assemble
+.program ws2812
+.wrap_target
+top:
+    out y, 1
+    set pins, 1
+    jmp !y low [6]
+    nop [7]
+low:
+    set pins, 0
+    jmp !y bit0 [5]
+    jmp top
+bit0:
+    nop [8]
+.wrap

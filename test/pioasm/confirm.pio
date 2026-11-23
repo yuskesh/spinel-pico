@@ -1,0 +1,16 @@
+.program confirm
+.wrap_target
+    irq set 3
+    jmp pin high
+    irq set 2
+    jmp merge [5]
+high:
+    nop [3]
+    jmp pin still
+    irq set 1
+    jmp merge
+still:
+    irq set 0 [1]
+merge:
+    nop
+.wrap

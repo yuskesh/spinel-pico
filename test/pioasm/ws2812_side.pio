@@ -1,0 +1,13 @@
+.program ws2812_side
+.side_set 1
+.wrap_target
+bitloop:
+    out y, 1        side 0
+    jmp !y merge    side 1 [7]
+    nop             side 1 [7]
+merge:
+    jmp !y longer   side 0 [6]
+    jmp bitloop     side 0
+longer:
+    nop             side 0 [8]
+.wrap

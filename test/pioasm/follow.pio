@@ -1,0 +1,10 @@
+.program follow
+.wrap_target
+    set pins, 1
+    jmp pin longer
+    jmp merge
+longer:
+    nop [7]
+merge:
+    set pins, 0 [4]
+.wrap

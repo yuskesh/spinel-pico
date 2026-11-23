@@ -1,0 +1,21 @@
+# Raspberry Pi Pico. Values only; the code is the chip family's (chip/rp2040/).
+# A 12 MHz crystal, a 2 MB flash read with the 03h command, and the console on
+# UART0 at GP0 (TX) and GP1 (RX).
+format: spinel-board
+version: 1
+chip: rp2040
+clock:
+  crystal_hz: 12000000
+flash:
+  size_bytes: 2097152
+  boot2: generic_03h
+  clock_divider: 4
+console:
+  uart: 0
+  tx: 0
+  rx: 1
+  baud: 115200
+policy:
+  gc_slab: 0
+  gc_threshold_kb: 16
+  stack_bytes: 32768

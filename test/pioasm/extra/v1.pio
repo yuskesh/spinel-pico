@@ -1,0 +1,5 @@
+.pio_version 1
+.program v1
+    wait 1 jmppin + 3
+    mov pindirs, x
+    wait 0 jmppin [2]

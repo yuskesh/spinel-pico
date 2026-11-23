@@ -1,0 +1,5 @@
+.program side4opt
+.side_set 4 opt pindirs
+    nop side 15
+    nop
+    jmp 1 side 3

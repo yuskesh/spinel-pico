@@ -1,0 +1,15 @@
+.pio_version 1
+.program d1_in
+.in 5 left
+.mov_status irq prev set 5
+    nop
+
+.program d1_next
+.in 3 right auto 9
+.mov_status irq next set 2
+.set 5
+    nop
+
+.program d1_irq
+.mov_status irq set 7
+    nop

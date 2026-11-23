@@ -1,0 +1,12 @@
+.program manchester
+.wrap_target
+top:
+    out y, 1
+    jmp !y is_zero
+    set pins, 0 [3]
+    set pins, 1
+    jmp top
+is_zero:
+    set pins, 1 [3]
+    set pins, 0 [1]
+.wrap

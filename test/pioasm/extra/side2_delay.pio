@@ -1,0 +1,5 @@
+.program side2_delay
+.side_set 2
+.origin 4
+    nop side 3 [7]
+    out x, 1 side 1 [7]

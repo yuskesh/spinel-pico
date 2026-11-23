@@ -1,0 +1,20 @@
+.program mov_irq_set
+    mov pins, ~x
+    mov x, ::y
+    mov y, null
+    mov exec, isr
+    mov pc, osr
+    mov isr, status
+    mov osr, pins
+    irq 0
+    irq set 1
+    irq nowait 2
+    irq wait 3
+    irq clear 4
+    irq 5 rel
+    irq wait 6 rel
+    set pins, 31
+    set x, 0
+    set y, 17
+    set pindirs, 1
+    nop [31]

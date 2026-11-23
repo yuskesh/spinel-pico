@@ -1,0 +1,11 @@
+.program burst
+.wrap_target
+    set x, 20
+carrier:
+    set pins, 1 [8]
+    set pins, 0 [15]
+    jmp x-- carrier
+    set y, 30 [20]
+gap:
+    jmp y-- gap [30]
+.wrap

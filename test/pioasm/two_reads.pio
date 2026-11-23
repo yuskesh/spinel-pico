@@ -1,0 +1,15 @@
+.program two_reads
+.wrap_target
+    set x, 1
+again:
+    irq set 2
+    jmp pin high
+    irq set 1
+    jmp merge
+high:
+    irq set 0 [1]
+merge:
+    nop
+    jmp x-- again
+    irq set 3 [3]
+.wrap

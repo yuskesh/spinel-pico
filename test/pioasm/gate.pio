@@ -1,0 +1,13 @@
+.program gate
+.wrap_target
+    irq set 2
+    jmp pin high
+    irq set 1
+    jmp merge
+high:
+    set pins, 1 [2]
+    set pins, 0
+    irq set 0 [1]
+merge:
+    nop [2]
+.wrap

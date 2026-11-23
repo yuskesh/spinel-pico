@@ -1,0 +1,7 @@
+.program irq_tick
+.wrap_target
+    irq set 0
+    set y, 6
+wait_loop:
+    jmp y-- wait_loop [13]
+.wrap

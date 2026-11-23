@@ -1,0 +1,16 @@
+.program two_words
+.wrap_target
+    set x, 1
+word:
+    pull block
+bitloop:
+    set pins, 1
+    out y, 1
+    jmp !y merge
+    nop [2]
+merge:
+    set pins, 0 [2]
+    jmp !osre bitloop
+    jmp x-- word
+    irq set 0 [1]
+.wrap

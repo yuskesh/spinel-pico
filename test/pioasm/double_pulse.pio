@@ -1,0 +1,12 @@
+.program double_pulse
+.wrap_target
+top:
+    out y, 1
+    set x, 1
+again:
+    set pins, 1 [1]
+    set pins, 0
+    jmp x-- again
+    jmp !y top [1]
+    nop [3]
+.wrap

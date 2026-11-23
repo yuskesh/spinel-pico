@@ -1,0 +1,13 @@
+.program square
+.wrap_target
+    pull noblock
+    mov x, osr
+    set pins, 1
+    mov y, x [2]
+hi:
+    jmp y-- hi
+    set pins, 0
+    mov y, x
+lo:
+    jmp y-- lo
+.wrap

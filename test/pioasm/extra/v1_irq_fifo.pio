@@ -1,0 +1,34 @@
+.pio_version 1
+.program v1_irq
+    irq prev set 3
+    irq next 2
+    irq next wait 1 [2]
+    irq prev clear 7
+    wait 1 irq prev 3
+    wait 0 irq next 2
+    irq set 4 rel
+    wait 1 irq 5 rel
+
+.program v1_txput
+.fifo txput
+    mov rxfifo[y], isr
+    mov rxfifo[3], isr [1]
+
+.program v1_txget
+.fifo txget
+.side_set 1 opt
+    mov osr, rxfifo[y] side 1
+    mov osr, rxfifo[2]
+
+.program v1_putget
+.fifo putget
+    mov rxfifo[0], isr
+    mov osr, rxfifo[1]
+
+.program v1_tx
+.fifo tx
+    pull
+
+.program v1_rx
+.fifo rx
+    push

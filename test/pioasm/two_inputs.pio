@@ -1,0 +1,18 @@
+.program two_inputs
+.wrap_target
+    irq set 4
+    jmp pin on
+    irq set 2
+    jmp merge [4]
+on:
+    mov osr, pins
+    out null, 1
+    out y, 1
+    jmp !y down
+    irq set 0
+    jmp merge
+down:
+    irq set 1 [1]
+merge:
+    nop
+.wrap
